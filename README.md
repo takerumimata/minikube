@@ -1,0 +1,2 @@
+# minikube
+minikube用のmanifest
