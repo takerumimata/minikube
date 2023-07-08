@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-nginx
+  template:
+    metadata:
+      labels:
+        app: sample-nginx
+    spec:
+      containers:
+      - name: sample-nginx
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+      nodeSelector:
+        kubernetes.io/hostname: minikube
