@@ -12,6 +12,9 @@ $ minikube start --driver=docker
 
 `--driver` オプションをつけない場合は default で VM を利用して kubernetes が起動する。上記は docker を run time として利用する場合の実行コマンド
 
+> **Warning**
+> driver に docker を指定した場合、NodePort を利用する際に tunnel を行う必要がある。access 方法については[Accessing apps](https://minikube.sigs.k8s.io/docs/handbook/accessing/)を参照すること。
+
 #### マルチノードで環境を構築する
 
 立ち上げ時に指定する方法
